@@ -31,14 +31,14 @@ namespace UI.Validators.Account
             CultureInfo.DefaultThreadCurrentCulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
             
-            RuleFor(x => x.Username)
-                .NotEmpty().WithMessage(_localization["ProfilePage_ProfileTab_ProfileValidator_RequiredUsername"])
-                .MinimumLength(8).WithMessage(String.Format(
-                    _localization["ProfilePage_ProfileTab_ProfileValidator_InvalidUsernameMinimalLength"],
-                    8.ToString()))
-                .MaximumLength(36).WithMessage(String.Format(
-                    _localization["ProfilePage_ProfileTab_ProfileValidator_InvalidUsernameMaximalLength"],
-                    36.ToString()));
+            // RuleFor(x => x.Username)
+            //     .NotEmpty().WithMessage(_localization["ProfilePage_ProfileTab_ProfileValidator_RequiredUsername"])
+            //     .MinimumLength(8).WithMessage(String.Format(
+            //         _localization["ProfilePage_ProfileTab_ProfileValidator_InvalidUsernameMinimalLength"],
+            //         8.ToString()))
+            //     .MaximumLength(36).WithMessage(String.Format(
+            //         _localization["ProfilePage_ProfileTab_ProfileValidator_InvalidUsernameMaximalLength"],
+            //         36.ToString()));
 
             RuleFor(x => x.DisplayName)
                 .NotEmpty().WithMessage(_localization["ProfilePage_ProfileTab_ProfileValidator_RequiredDisplayName"])

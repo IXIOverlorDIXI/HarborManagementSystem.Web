@@ -25,12 +25,12 @@
         <MudGrid>
             <MudItem xs="12" sm="7" Class="mx-auto pa-6">
                 <MudCard>
-                    <MudForm ref="@profileForm" Model="@_profileForm" Validation="@(ProfileFormValidation.ValidateValue)" ValidationDelay="0">
+                    <MudForm @ref="@profileForm" Model="@_profileForm" Validation="@(ProfileFormValidation.ValidateValue)" ValidationDelay="0">
                         <MudCardContent>
-                            <MudTextField Label="@Localization["ProfilePage_ProfileTab_UsernameLabel"]"
-                                          HelperText="@Localization["ProfilePage_ProfileTab_UsernameHelperText"]"
-                                          Class="mt-3"
-                                          @bind-Value="_profileForm.Username" For="@(() => _profileForm.Username)"/>
+                            @* <MudTextField Label="@Localization["ProfilePage_ProfileTab_UsernameLabel"]" *@
+                            @*               HelperText="@Localization["ProfilePage_ProfileTab_UsernameHelperText"]" *@
+                            @*               Class="mt-3" *@
+                            @*               @bind-Value="_profileForm.Username" For="@(() => _profileForm.Username)"/> *@
                             <MudTextField Label="@Localization["ProfilePage_ProfileTab_DisplayNameLabel"]"
                                           HelperText="@Localization["ProfilePage_ProfileTab_DisplayNameHelperText"]"
                                           Class="mt-3"

@@ -93,7 +93,7 @@
         <value>Пароль</value>
     </data>
     <data name="AuthorizationPage_RegisterTab_UsernameHelperText" xml:space="preserve">
-        <value>Ім'я користувача можна буде змінити пізніше</value>
+        <value>Ім'я користувача не можна буде змінити пізніше</value>
     </data>
     <data name="AuthorizationPage_RegisterTab_UsernameLabel" xml:space="preserve">
         <value>Ім'я користувача</value>

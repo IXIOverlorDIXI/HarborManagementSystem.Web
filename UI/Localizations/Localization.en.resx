@@ -93,7 +93,7 @@
         <value>Password</value>
     </data>
     <data name="AuthorizationPage_RegisterTab_UsernameHelperText" xml:space="preserve">
-        <value>Username name will be able to change latter</value>
+        <value>Username name will not be able to change latter</value>
     </data>
     <data name="AuthorizationPage_RegisterTab_UsernameLabel" xml:space="preserve">
         <value>Username</value>
