@@ -11,6 +11,10 @@
         public string SupportEmail { get; set; }
         
         public string SupportPhoneNumber { get; set; }
+        
+        public string BIC { get; set; }
+        
+        public string IBAN { get; set; }
 
         public double GeolocationLongitude { get; set; }
     
@@ -21,5 +25,7 @@
         public double AverageRate { get; set; }
         
         public int ReviewsAmount { get; set; }
+        
+        public bool IsOwner { get; set; }
     }
 }

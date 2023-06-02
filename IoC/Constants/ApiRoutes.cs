@@ -21,24 +21,30 @@
         {
             public const string Controller = $"{Base}/Berth";
             
-            public const string Photo = $"{Controller}/photo";
+            public const string ById = $"{Controller}/byId";
             
-            public const string SuitableBerth = $"{Base}/suitableBerths";
+            public const string Photos = $"{Controller}/photos";
             
-            public const string TurnOffOnTheBerth = $"{Base}/turnOffOnTheBerth";
+            public const string SuitableBerth = $"{Controller}/suitableBerths";
+            
+            public const string TurnOffOnTheBerth = $"{Controller}/turnOffOnTheBerth";
         }
 
         public static class Booking
         {
             public const string Controller = $"{Base}/booking";
             
+            public const string ById = $"{Controller}/byId";
+
+            public const string GetReservedDates = $"{Controller}/getReservedDates";
+            
             public const string OwnBookings = $"{Controller}/OwnBookings";
             
             public const string OwnBookingsForShip = $"{Controller}/ownBookingsForShip";
             
-            public const string OwnBookingsForHarbor = $"{Controller}/ownBookingsForHarbor";
+            public const string BookingsForHarbor = $"{Controller}/BookingsForHarbor";
             
-            public const string OwnBookingsForBerth = $"{Controller}/ownBookingsForBerth";
+            public const string BookingsForBerth = $"{Controller}/BookingsForBerth";
             
             public const string BookingDataForCheck = $"{Controller}/bookingDataForCheck";
         }
@@ -56,6 +62,8 @@
         public static class Harbor
         {
             public const string Controller = $"{Base}/Harbor";
+            
+            public const string ById = $"{Controller}/byId";
             
             public const string OwnHarbors = $"{Controller}/ownHarbors";
             
@@ -83,6 +91,10 @@
         public static class Review
         {
             public const string Controller = $"{Base}/Review";
+            
+            public const string ByBerth = $"{Controller}/byBerth";
+            
+            public const string ByHarbor = $"{Controller}/byHarbor";
         }
         
         public static class Service
@@ -93,6 +105,8 @@
         public static class Ship
         {
             public const string Controller = $"{Base}/Ship";
+            
+            public const string ById = $"{Controller}/byId";
             
             public const string Photo = $"{Controller}/photo";
         }

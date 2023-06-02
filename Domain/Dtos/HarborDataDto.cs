@@ -19,4 +19,6 @@ public class HarborDataDto
     public double GeolocationLongitude { get; set; }
     
     public double GeolocationLatitude  { get; set; }
+    
+    public string OwnerName { get; set; }
 }
