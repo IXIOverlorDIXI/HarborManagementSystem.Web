@@ -244,7 +244,7 @@
                     parameters, options)).Result;
             }
 
-            response = await Client.GetAsync(ApiRoutes.Ship.Controller);
+            response = await Client.GetAsync(ApiRoutes.Ship.Controller + "?username=" + _username);
 
             _ships = await response.Content.ReadFromJsonAsync<List<ShipPreviewDataDto>>();
 
@@ -321,7 +321,7 @@
         _isAdmin = userDto.IsAdmin;
         _username = userDto.Username;
 
-        response = await Client.GetAsync(ApiRoutes.Ship.Controller);
+        response = await Client.GetAsync(ApiRoutes.Ship.Controller + "?username=" + _username);
 
         _ships = await response.Content.ReadFromJsonAsync<List<ShipPreviewDataDto>>();
 
