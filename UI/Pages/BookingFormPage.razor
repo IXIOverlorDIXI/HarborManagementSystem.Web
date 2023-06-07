@@ -299,23 +299,25 @@
     private string _createBookingError = "";
 
     private int _activePanel = 0;
+    private readonly BookingDates _currentDates = new BookingDates();
 
     private bool CheckDateDisabled(DateTime date)
     {
-        if (_booking.StartDate.Date == date.Date || _booking.EndDate.Date == date.Date)
-        {
-            return false;
-        }
-        
-        var isDisabled = _bookings.Any(x =>
-            x.StartDate.Date <= date.Date
-            && x.EndDate.Date >= date.Date);
+        var isDisabled = _bookings
+            .Where(x => x.EndDate.Date != _currentDates.EndDate.Date 
+                        && x.StartDate.Date != _currentDates.StartDate.Date)
+            .Any(x =>
+                x.StartDate.Date <= date.Date
+                && x.EndDate.Date >= date.Date);
 
         isDisabled = isDisabled || date.Date <= DateTime.Now.Date;
         
         if (_bookingForm.StartDate.HasValue)
         {
-            var endLimit = _bookings.FirstOrDefault(x => x.EndDate.Date > _bookingForm.StartDate.Value.Date);
+            var endLimit = _bookings
+                .Where(x => x.EndDate.Date != _currentDates.EndDate.Date 
+                            && x.StartDate.Date != _currentDates.StartDate.Date)
+                .FirstOrDefault(x => x.EndDate.Date > _bookingForm.StartDate.Value.Date);
             
             if (endLimit != null)
             {
@@ -325,7 +327,10 @@
 
         if (_bookingForm.EndDate.HasValue)
         {
-            var startLimit = _bookings.LastOrDefault(x => x.StartDate.Date < _bookingForm.EndDate.Value.Date);
+            var startLimit = _bookings
+                .Where(x => x.EndDate.Date != _currentDates.EndDate.Date 
+                            && x.StartDate.Date != _currentDates.StartDate.Date)
+                .LastOrDefault(x => x.StartDate.Date < _bookingForm.EndDate.Value.Date);
             
             if (startLimit != null)
             {
@@ -626,6 +631,9 @@
             }
             
             _booking = await response.Content.ReadFromJsonAsync<BookingEditDataDto>();
+            
+            _currentDates.StartDate = _booking.StartDate;
+            _currentDates.EndDate = _booking.EndDate;
 
             _bookingForm.StartDate = _booking.StartDate;
             _bookingForm.EndDate = _booking.EndDate;
