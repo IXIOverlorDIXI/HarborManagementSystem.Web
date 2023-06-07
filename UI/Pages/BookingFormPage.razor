@@ -312,6 +312,7 @@
             && x.EndDate.Date >= date.Date);
 
         isDisabled = isDisabled || date.Date <= DateTime.Now.Date;
+        
         if (_bookingForm.StartDate.HasValue)
         {
             var endLimit = _bookings.FirstOrDefault(x => x.EndDate.Date > _bookingForm.StartDate.Value.Date);
@@ -595,7 +596,7 @@
             NavManager.NavigateTo(PageNavigateConstants.IndexPage);
         }
 
-        response = await Client.GetAsync(ApiRoutes.Ship.Controller);
+        response = await Client.GetAsync(ApiRoutes.Ship.Controller + "?username=" + userDto.Username);
 
         _ships = await response.Content.ReadFromJsonAsync<List<ShipPreviewDataDto>>();
         
