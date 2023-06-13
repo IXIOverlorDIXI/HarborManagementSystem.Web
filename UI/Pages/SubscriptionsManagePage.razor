@@ -170,7 +170,7 @@
                                 @_editSubscriptionError
                             </MudAlert>
                         }
-                        @if (_editSubscriptionSuccessAlertVisibile)
+                        @if (_editSubscriptionErrorAlertVisibile)
                         {
                             <MudAlert Severity="Severity.Success" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true"
                                       CloseIconClicked="(() => closeAlert(AlertDestination.EditSubscriptionSuccess))">
