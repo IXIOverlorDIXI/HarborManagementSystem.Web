@@ -26,9 +26,9 @@
                         DataAverage="@_backDistanceData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.BackDistance))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.BackDistance))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_FrontDistanceChart_DataAverageLocalizationKey"
@@ -42,9 +42,9 @@
                         DataAverage="@_frontDistanceData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.FrontDistance))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.FrontDistance))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_RightDistanceChart_DataAverageLocalizationKey"
@@ -58,9 +58,9 @@
                         DataAverage="@_rightDistanceData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.RightDistance))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.RightDistance))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_LeftDistanceChart_DataAverageLocalizationKey"
@@ -74,9 +74,9 @@
                         DataAverage="@_leftDistanceData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.LeftDistance))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.LeftDistance))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_RollAngleChart_DataAverageLocalizationKey"
@@ -90,9 +90,9 @@
                         DataAverage="@_rollAngleData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), Math.Abs(x.RollAngle)))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), Math.Abs(x.RollAngle)))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_RotationAngleChart_DataAverageLocalizationKey"
@@ -106,9 +106,9 @@
                         DataAverage="@_rotationAngleData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), Math.Abs(x.RotationAngle)))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), Math.Abs(x.RotationAngle)))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_TiltAngleChart_DataAverageLocalizationKey"
@@ -122,9 +122,9 @@
                         DataAverage="@_tiltAngleData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), Math.Abs(x.TiltAngle)))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), Math.Abs(x.TiltAngle)))
                                        .ToList())"/>
                     <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_HeightHeadAboveWaterChart_DataAverageLocalizationKey"
@@ -138,9 +138,9 @@
                         DataAverage="@_heightHeadAboveWaterData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.HeightHeadAboveWater))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.HeightHeadAboveWater))
                                        .ToList())"/>
                 <LineChartDiagram
                         ChartDataAverageLocalizationKey="StatisticsPage_RelativePositionComponent_HeightTailAboveWaterChart_DataAverageLocalizationKey"
@@ -154,9 +154,9 @@
                         DataAverage="@_heightTailAboveWaterData"
                         DataByOne="@(RelativePositionMeteringData
                                        .OrderBy(x => x.MeteringDate)
-                                       .TakeLast(20)
+                                       .TakeLast(5)
                                        .Select(x => 
-                                           new Tuple<string, double>(x.MeteringDate.ToString(), x.HeightTailAboveWater))
+                                           new Tuple<string, double>(x.MeteringDate.ToString("HH:mm:ss"), x.HeightTailAboveWater))
                                        .ToList())"/>
             </MudPaper>
         }

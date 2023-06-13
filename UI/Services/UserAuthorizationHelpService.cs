@@ -69,15 +69,24 @@ namespace UI.Services
                         new AuthenticationHeaderValue("Bearer", token);
 
                     response = await client.GetAsync(ApiRoutes.Account.Controller);
-                }
-                
 
-                var userDto = await response.Content.ReadFromJsonAsync<UserDto>();
+                    UserDto userDto = null;
+                    
+                    if (response.IsSuccessStatusCode)
+                    {
+                        userDto = await response.Content.ReadFromJsonAsync<UserDto>();
+                    }
+                    else
+                    {
+                        var localStorageService = scope.ServiceProvider.GetRequiredService<ILocalStorageService>();
+                        await localStorageService.RemoveItemAsync("token");
+                    }
 
-                if (userDto != null)
-                {
-                    IsUserAuthenticated = true;
-                    return;
+                    if (userDto != null)
+                    {
+                        IsUserAuthenticated = true;
+                        return;
+                    }
                 }
             }
 
